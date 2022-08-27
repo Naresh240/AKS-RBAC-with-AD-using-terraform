@@ -7,14 +7,14 @@ resource"azurerm_kubernetes_cluster" "testcluster"{
 
   default_node_pool {
     # Defining details for the 
-    name  = "defaultnp"
-    node_count  = 1
-    vm_size = "Standard_D2a_v4"
+    name  = var.default_node_pool_name
+    node_count  = var.default_node_pool_count
+    vm_size = var.default_node_pool_VM_size
   }
 
   azure_active_directory_role_based_access_control {
     managed = true
-    admin_group_object_ids = ["b2a27b2f-f45d-4f3a-82e9-07ec2daeed74"]
+    admin_group_object_ids = var.rbac_aad_admin_group_object_ids
     azure_rbac_enabled = false
   }
 
@@ -23,7 +23,7 @@ resource"azurerm_kubernetes_cluster" "testcluster"{
   }
   
   tags = {
-    environment = "azureterraform"
+    environment = "dev"
     cluster_name  = "${var.cluster_name}"
   }
 }

@@ -1,6 +1,6 @@
-resource "kubernetes_role" "example_role" {
+resource "kubernetes_role" "read_role" {
     metadata {
-      name      = "pod-reader"
+      name      = "read-role"
     }
     rule {
     api_groups     = [""]
