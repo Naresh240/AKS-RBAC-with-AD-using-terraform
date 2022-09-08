@@ -4,8 +4,8 @@
 
 ```bash
 - login to azure
-- Create Groups (dev and readonly group)
-- Create Users and users to Groups
+- Create Groups (```dev``` and ```readonly``` group)
+- Create Users and attach Users to Groups
 - Attach Role (Azure Kubernetes Service Cluster User Role) to Group
 ```
 
